@@ -33,15 +33,6 @@ Makefile
 rebuild_PC/result
 /result
 
-# Version tracker
-tools/updater/.version
-
-# Third party stuff
-tools/gcc-psyq-converted/include/*
-tools/gcc-psyq-converted/lib/*
-!/tools/gcc-psyq-converted/lib/.gitignore
-!/tools/gcc-psyq-converted/include/.gitignore
-
 # Settings
 games/settings.json
 
@@ -50,8 +41,5 @@ games/settings.json
 *.pdb
 *.lib
 *.dll
-
-# MyMods folder
-mods/MyMods/*
 
 log.txt
