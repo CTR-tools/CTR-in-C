@@ -1,0 +1,26 @@
+{
+	"compiler":
+	{
+		"function_sections": 1,
+		"reorder_functions": 0,
+		"optimization": 4,
+		"debug": 1,
+		"psyq": 0,
+		"mininoob": 0,
+		"8mb": 1
+	},
+	"versions":
+	[
+		{
+			"rewrite":
+			{
+				"name": "ctr-u.bin",
+				"symbols":
+				[
+					"gcc-syms-rewrite.txt", "gcc-extern-rewrite.txt"
+				],
+				"build_id": 9999
+			}
+		}
+	]
+}

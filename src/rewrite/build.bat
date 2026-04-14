@@ -1,1 +1,1 @@
-python ../../../../tools/mod-builder/main.py --include-dir src/rewrite/include
+python ../../../../tools/mod-builder/main.py

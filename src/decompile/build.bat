@@ -1,1 +1,1 @@
-python ../../../../tools/mod-builder/main.py --include-dir src/decompile/include
+python ../../../../tools/mod-builder/main.py
