@@ -17,7 +17,7 @@
 				"name": "ctr-u.bin",
 				"symbols":
 				[
-					"gcc-syms926.txt"
+					"../src/decompile/symbols/gcc-syms926.txt"
 				],
 				"build_id": 926
 			}
@@ -28,7 +28,7 @@
 				"name": "ctr-pal.bin",
 				"symbols":
 				[
-					"gcc-syms1020.txt"
+					"../src/decompile/symbols/gcc-syms1020.txt"
 				],
 				"build_id": 1020
 			}
@@ -39,7 +39,7 @@
 				"name": "ctr-j.bin",
 				"symbols":
 				[
-					"gcc-syms1111.txt"
+					"../src/decompile/symbols/gcc-syms1111.txt"
 				],
 				"build_id": 1111
 			}
@@ -50,7 +50,7 @@
 				"name": "ctr-903.bin",
 				"symbols":
 				[
-					"gcc-syms903.txt"
+					"../src/decompile/symbols/gcc-syms903.txt"
 				],
 				"build_id": 903
 			}
@@ -61,7 +61,7 @@
 				"name": "ctr-j-trial.bin",
 				"symbols":
 				[
-					"gcc-syms1006.txt"
+					"../src/decompile/symbols/gcc-syms1006.txt"
 				],
 				"build_id": 1006
 			}
@@ -72,7 +72,7 @@
 				"name": "ctr-u.bin",
 				"symbols":
 				[
-					"gcc-syms-rewrite.txt", "gcc-extern-rewrite.txt"
+					"../src/rewrite/symbols/gcc-syms-rewrite.txt", "../src/rewrite/symbols/gcc-extern-rewrite.txt"
 				],
 				"build_id": 9999
 			}
