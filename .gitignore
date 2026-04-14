@@ -25,6 +25,9 @@ data/
 packages/
 externals/
 *.log
+*.elf
+*.map
+sections.txt
 offset.txt
 comport.txt
 gcc_out.txt
