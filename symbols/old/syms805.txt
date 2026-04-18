@@ -1,0 +1,311 @@
+80010000 rdata
+// data
+// sdata_static
+// bss
+
+// start of BOTS
+8001306c BOTS_SetGlobalNavData
+800130cc BOTS_InitNavPath
+// no EmptyFunc, no NumTimesLostEvent
+800131f4 BOTS_Adv_AdjustDifficulty
+80013bd8 BOTS_UpdateGlobals
+80013ca8 BOTS_SetRotation
+80013e14 BOTS_LevInstColl
+80013f68 BOTS_ThTick_RevEngine
+80014074 BOTS_MaskGrab
+800142ac BOTS_Killplane
+80014454 BOTS_ThTick_Drive
+80016d48 BOTS_ChangeState
+80017064 BOTS_CollideWithOtherAI
+800171c8 BOTS_GotoStartingLine
+800172fc BOTS_Driver_Init
+800174b0 BOTS_Driver_Convert
+
+// start of CAM
+80017720 CAM_SkyboxGlow
+80018770 CAM_ClearScreen
+8001896c CAM_Init
+80018a08 CAM_FindClosestQuadblock
+// 80018c78 extra function
+80018db8 CAM_Path_GetNumPoints
+80018e40 CAM_Path_Move
+// 80018fc4 extra function
+80019024 CAM_StartOfRace
+800190a0 CAM_EndOfRace_Battle
+8001913c CAM_EndOfRace
+800191b0 CAM_StartLine_FlyIn_FixY
+// no CAM_ProcessTransition
+// no CAM_FollowDriver_AngleAxis
+800192dc CAM_StartLine_FlyIn
+8001970c CAM_FollowDriver_TrackPath
+80019c90 CAM_LookAtPosition
+80019d6c CAM_FollowDriver_Spin360
+80019e68 CAM_SetDesiredPosRot
+80019ed0 CAM_FollowDriver_Normal
+8001ac24 CAM_MapRange_PosPoints
+8001ad04 CAM_ThTick
+
+
+// start of CDSYS
+8001bfcc CDSYS_Init
+8001c084 CDSYS_GetFilePosInt
+8001c0d4 CDSYS_SetMode_StreamData
+8001c160 CDSYS_SetMode_StreamAudio
+8001c1e0 CDSYS_SetXAToLang
+8001c4a8 CDSYS_XaCallbackCdSync
+8001c500 CDSYS_XaCallbackCdReady
+8001c5d0 CDSYS_SpuCallbackIRQ
+8001c664 CDSYS_SpuCallbackTransfer
+8001c6b4 CDSYS_SpuEnableIRQ
+8001c72c CDSYS_SpuDisableIRQ
+8001c75c CDSYS_SpuGetMaxSample
+8001c85c CDSYS_XAGetNumTracks
+// 8001c894 accidental duplicate of CDSYS_XAGetNumTracks
+8001c8cc CDSYS_XASeek
+8001c9d4 CDSYS_XAGetTrackLength
+8001ca68 CDSYS_XAPlay
+8001cc1c CDSYS_XAPauseRequest
+// no CDSYS_XAPauseForce
+// no CDSYS_XAPauseAtEnd
+// 8001cc70 (force or AtEnd?)
+
+
+8001ccc0 COLL_LevModelMeta
+// rest of coll...
+
+
+
+
+80021fd8 DebugFont_Init
+80022010 DebugFont_DrawNumbers
+
+
+800237a0 DotLights_Video
+800239d8 DotLights_AudioAndVideo
+
+80023b84 DropRain_MakeSound
+80023c3c DropRain_Reset
+
+// ElimBG is not in Aug builds
+
+80023c44 GAMEPAD_Init
+80023c98 GAMEPAD_SetMainMode
+80023d30 GAMEPAD_ProcessState
+80023e18 GAMEPAD_PollVsync
+// missing GAMEPAD_GetNumConnected
+// extra appears in Aug+Sep3
+80024084 GAMEPAD_ProcessHold
+800241c0 GAMEPAD_ProcessSticks
+80024680 GAMEPAD_ProcessTapRelease
+80024788 GAMEPAD_ProcessMotors
+800249b4 GAMEPAD_ProcessAnyoneVars
+80024a84 GAMEPAD_JogCon1
+80024ae0 GAMEPAD_JogCon2
+80024b24 GAMEPAD_ShockFreq
+80024ba4 GAMEPAD_ShockForce1
+80024c24 GAMEPAD_ShockForce2
+
+80024ca4 GAMEPROG_AdvPercent
+80024f0c GAMEPROG_ResetHighScores
+// missing GAMEPROG_CheckGhostsBeaten
+80025110 GAMEPROG_NewProfile_OutsideAdv
+80025144 GAMEPROG_InitFullMemcard
+800251d0 GAMEPROG_NewProfile_InsideAdv
+// missing GAMEPROG_SaveCupProgress
+// missing GAMEPROG_SyncGameAndCard
+80026e48 GAMEPROG_NewGame_OnBoot
+8002523c GAMEPROG_GetPtrHighScoreTrack
+
+80025294 GhostReplay_ThTick
+80025b60 GhostReplay_Init1
+80025eb8 GhostReplay_Init2
+
+80026108 GhostTape_Start
+800261a4 GhostTape_End
+80026234 GhostTape_WriteMoves
+80026690 GhostTape_WriteBoosts
+80026714 GhostTape_Destroy
+
+
+// howl...
+80026740 CountSounds
+
+
+
+// No GARAGE in howl for this build
+
+
+8002d148 INSTANCE_Birth
+8002d23c INSTANCE_Birth3D
+8002d2b4 INSTANCE_Birth2D
+8002d374 INSTANCE_BirthWithThread
+8002d420 INSTANCE_BirthWithThread_Stack
+8002d478 INSTANCE_Death
+8002d4a4 INSTANCE_LevInitAll
+// no INSTANCE_LevDelayedLInBs
+8002d874 INSTANCE_GetNumAnimFrames
+
+
+
+
+8002e5e8 LOAD_DramFileCallback
+8002e688 LOAD_DramFile
+8002e76c LOAD_VramFileCallback
+8002e878 LOAD_VramFile
+8002e9ac LOAD_ReadFileASyncCallback
+8002ec00 LOAD_ReadFile
+
+
+
+8002ee34 LOAD_RunPtrMap
+8002ee80 LOAD_Robots2P
+8002ef6c LOAD_Robots1P
+8002efbc LOAD_DriverMPK
+8002f2b8 LOAD_LangFile
+8002f354 LOAD_GetBigfileIndex
+8002f3e0 LOAD_AppendQueue
+8002f43c LOAD_CDRequestCallback
+8002f470 LOAD_NextQueuedFile
+// missing LOAD_Hub_ReadFile
+8002f6a4 LOAD_Hub_SwapNow
+// missing several
+8002fac0 LOAD_TenStages
+// missing LOAD_TalkingMask
+80030718 LOAD_LevelFile
+80030758 LOAD_IsOpen_RacingOrBattle
+// missing all other IsOpen's
+
+
+
+// missing GetClipSize
+800307c4 MainDB_PrimMem
+
+
+80030994 MainFrame_ResetDB
+80030b28 MainFrame_SplashScreens // Aug05
+80030d68 MainFrame_GameLogic
+
+80031dd4 MainFrame_RenderFrame
+
+
+
+
+
+80035ec0 MainInit_VisMem
+80035f44 MainInit_RainBuffer
+
+8003602c MainInit_PrimMem
+80036168 MainInit_JitPoolsReset
+800361c8 MainInit_OTMem
+80036238 MainInit_JitPoolsNew
+800364a8 MainInit_Drivers
+80036718 MainInit_FinalizeInit
+80036edc MainInit_StringToLevID
+// no MainInit_VRAMClear
+80036f40 MainInit_VRAMDisplay
+// no MainKillGame
+// no MainLoadVLC
+80037008 main
+
+
+
+
+
+
+8003968c MEMCARD_IsFile
+800396f0 MEMCARD_FindFirstGhost
+80039768 MEMCARD_FindNextGhost
+800397c4 MEMCARD_EraseFile
+80039824 MEMCARD_CopyrightE3
+
+80039a24 MEMPACK_Init
+80039acc MEMPACK_SwapPacks
+80039af0 MEMPACK_NewPack
+80039b1c MEMPACK_GetFreeBytes
+80039b34 MEMPACK_AllocMem
+
+80039e54 MixRNG_Scramble
+80039e98 MixRNG_Particles
+80039ed8 MixRNG_GetValue
+
+80039f0c Particle_FuncPtr_PotionShatter
+8003a044 Particle_FuncPtr_SpitTire
+8003a24c Particle_FuncPtr_ExhaustUnderwater
+8003a2dc Particle_OnDestroy
+// extra in aug+sep3
+// extra just in aug (check dead?)
+8003a3a4 Particle_UpdateList
+8003a91c Particle_UpdateAllParticles
+
+8003ca54 PROC_BirthWithObject
+
+8003e580 RaceFlag_DrawSelf
+
+
+
+80041544 RefreshCard_Entry
+
+
+
+80041588 SelectProfile_QueueLoadHub_MenuProc
+800415dc SelectProfile_ThTick
+80041700 SelectProfile_PrintInteger
+80041798 SelectProfile_ConvertX_2
+800417b8 SelectProfile_ConvertY_2
+800417d8 SelectProfile_DrawAdvProfile
+80041d8c SelectProfile_GetTrackID
+80041db0 SelectProfile_Init
+800420c4 SelectProfile_Destroy
+
+
+// EndRace menus are in UI
+// 8004cc04
+// 80051910 CC_EndEvent (dingo bingo still here)
+// 800523b4
+// 8004ee04
+
+
+80053054 VehBirth_WriteKey2BCB
+800530c8 VehBirth_TeleportSelf
+80053968 VehBirth_TeleportAll
+80053a18 VehBirth_GetModelByName
+80053b30 VehBirth_SetConsts
+
+
+// Main Menu overlay
+800a60c0 MM_JumpTo_Title_FirstTime
+800a6104 MM_JumpTo_BattleSetup
+800a6128 MM_JumpTo_TrackSelect
+800a6164 MM_JumpTo_Characters
+
+
+
+
+// RaceBattle overlay (contains RB, AH, Weapons)
+800a45dc RB_Warpball_ThTick
+
+800a95c4 RB_Blade_LInB
+
+800aab88 RB_Crystal_LInC
+800aac54 RB_Crystal_LInB
+
+800abae8 RB_Armadillo_LInB
+
+// no Follower thread in Aug05
+
+800abf88 RB_Fireball_LInB
+
+
+
+800ae140 AH_WarpPad_LInB
+
+800afC40 AH_Garage_LInB
+
+
+
+800b1874 RB_Minecart_LInB
+
+800b3cb0 RB_Spider_LInB
+
+800b485c RB_Turtle_LInC
+800b48b4 RB_Turtle_LInB

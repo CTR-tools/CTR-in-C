@@ -1,24 +1,14 @@
 # CTR-in-C
 
-This repository is used for an attempt at decompiling the original CTR assembly into C code. To learn more about projects in this repo, take a look at the readme in [src/README.md](src/README.md).
+This is a game environment for [psx-modding-toolchain](https://github.com/mateusfavarin/psx-modding-toolchain/) that houses an ongoing decompilation project for the PSX game Crash Team Racing. This is a non byte matching decompilation, aiming for code quality while achieving the same functionality as the original game. This project adopts the [Ship of Theseus](https://en.wikipedia.org/wiki/Ship_of_Theseus) strategy. By taking advantage of [PCSX-Redux](https://github.com/grumpycoders/pcsx-redux/) 8MB memory expansion, we can re-write game functions and load them in memory, while the original game stays intact. Then, we can force the game to call each function we re-wrote, and compare the output of the decompiled function with the original game function.
 
-[![Contributors][contributors-badge]][contributors-link] [![Discord Server][discord-badge]][discord]
+# Contributing
 
-[contributors-link]: https://github.com/CTR-Tools/CTR-ModSDK/graphs/contributors
-[contributors-badge]: https://img.shields.io/github/contributors/CTR-Tools/CTR-ModSDK
-
-[discord]: https://discord.gg/WHkuh2n
-[discord-badge]: https://img.shields.io/discord/527135227546435584?color=%237289DA&logo=discord&logoColor=ffffff
-
-## 🏁 Modding CTR
-
-If you are looking to use mods for CTR, please take a look at [this repo](https://github.com/CTR-tools/CTR-ModSDK) instead.
+Are you interested in contributing? Have any experience in C programming language? You're welcome to join!
 
 ## Requirements
 
 This SDK requires the installation of [mateusfavarin](https://github.com/mateusfavarin)'s [psx-modding-toolchain](https://github.com/mateusfavarin/psx-modding-toolchain). You can check the repo's readme for instructions on the installation and additional documentation on its usage. All python and pip steps are mandatory.
-
-## Downloading the project
 
 After setting up psx-modding-toolchain, clone this repository
 into the local directory psx-modding-toolchain/games:
@@ -27,17 +17,9 @@ into the local directory psx-modding-toolchain/games:
 $ git clone https://github.com/CTR-tools/CTR-in-C.git
 ```
 
-![decompile progress](decomp_progress.png)
-
-[![Decompile Overview](https://img.youtube.com/vi/V9QlFzSVDAU/hqdefault.jpg)](https://www.youtube.com/watch?v=V9QlFzSVDAU)
-
-# 🤝 Contributing
-
-Are you interested in contributing? Have any experience in C programming language? You're welcome to join!
-
 ## `rewrite` project
 
-The `rewrite` is our second (and preferred) attempt at decompiling CTR, with higher code standards and more rigorous testing than the original `decompile` project (mentioned below). It targets only the NTSC-U build (9/26/99 build date) — there are no considerations for other regional builds.
+The `rewrite` folder houses the primary effort at decompiling CTR, with higher code standards and more rigorous testing than the original `decompile` project (mentioned below). It targets only the NTSC-U build (9/26/99 build date) — there are no considerations for other regional builds.
 
 Like the `decompile`, the `rewrite` adopts the [Ship of Theseus](https://en.wikipedia.org/wiki/Ship_of_Theseus) strategy: using 8MB memory expansion (supported by many PS1 emulators), rewritten functions are loaded alongside the original game, allowing direct comparison between the original and rewritten implementations. The focus is on matching both behavior and API.
 
@@ -54,28 +36,34 @@ Pure functions (no global side effects) must have unit tests that call both the 
 - Run `build.bat` and choose "Compile", "Build ISO", then test in PCSX-Redux.
 - Once everything is working, feel free to open a pull request!
 
-## `decompile` project
-
-### How to rewrite functions:
-
-- Make sure you have cloned this repo and installed the requirements.
-- Choose a function from a *.c file from the [ghidra](reference/ghidra) folder. Each file represents a code section or category. All non-numbered *.c files are parts of the main EXE while the numbered files are overlays.
-- Choose a function in that section to rewrite. Read the documentation comments on what the function does and what's the address.
-- Set up a compile folder for your rewritten function using psx-modding-toolchain (if it doesn't already exist). You can see ones that already exist in [src/decompile/General](src/decompile/General).
-
-\* Build codenames:  
-common: All versions;  
-926: USA Retail;  
-1006: Japan Trial;  
-1020: Europe Retail;  
-1111: Japan Retail.  
-
-\**  Code region:  
-exe: main EXE;  
-221-233: Overlays (use the original .c filename number)
-
-- Run `build.bat` and choose "Compile", "Build ISO", then test the game.
-- After you've confirmed that it's functional, add your new function .c file to the [decompile directory](src/decompile).
-- Feel free to make a pull request after everything is working!
-
 If you have any questions, reach us out in our [Discord server](https://discord.gg/WHkuh2n).
+
+# Repository Structure
+
+## Rewrite-specific
+
+`rewrite/src/hooks/dll/`: boot loader for the decompile.
+
+`rewrite/src/exe/`: main executable decomp.
+
+`rewrite/src/tests/`: tests for each decompiled function.
+
+`rewrite/scripts/`: helpful misc scripts.
+
+`include/ctr/`: decompile headers.
+
+`symbols/gcc-syms-rewrite.txt`: original function addresses.
+
+`symbols/gcc-extern-rewrite.txt`: extern global variable addresses.
+
+## Miscellaneous
+
+`build/`: paste your original CTR rom here in order to compile CTR builds.
+
+`ghidra/`: commented disassembler output of the game's source code; ancient, data structures are ghidra stock.
+
+`plugins/`: third-party programs and extensions added to the modding toolchain; see psx-modding-toolchain's documentation for more info.
+
+# Modding CTR
+
+If you are looking to use mods for CTR, please take a look at [this repo](https://github.com/CTR-tools/CTR-ModSDK) instead.
