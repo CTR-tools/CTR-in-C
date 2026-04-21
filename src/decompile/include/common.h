@@ -163,7 +163,7 @@ enum HotReloadSteps
 
 
 #ifdef USE_PCDRV
-#include "../decompile/General/AltMods/PCDRV/pcdrv.h"
+#include "../General/AltMods/PCDRV/pcdrv.h"
 #endif
 
 

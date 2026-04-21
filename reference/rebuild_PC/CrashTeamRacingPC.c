@@ -71,8 +71,8 @@ typedef enum {
 // ======= RebuildPS1 -> PC =============
 
 #include "../rebuild_PS1/main.c"
-#include "../decompile/General/zGlobal_DATA.c"
-#include "../decompile/General/zGlobal_SDATA.c"
+#include "../../src/decompile/General/zGlobal_DATA.c"
+#include "../../src/decompile/General/zGlobal_SDATA.c"
 
 // ======= PC-Specific Code =============
 
