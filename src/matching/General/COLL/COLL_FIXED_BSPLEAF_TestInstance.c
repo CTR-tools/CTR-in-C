@@ -1,3 +1,7 @@
+// ===================================================
+// Should be score 0, needs types analysis/replacement
+// ===================================================
+
 typedef unsigned int uint;
 typedef unsigned char byte;
 void func_8001D0C4(int, int *);

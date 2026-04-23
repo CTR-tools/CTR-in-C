@@ -1,3 +1,6 @@
+// ===================================================
+// Should be score 0, needs types analysis/replacement
+// ===================================================
 
 typedef unsigned int uint;
 typedef unsigned short ushort;
