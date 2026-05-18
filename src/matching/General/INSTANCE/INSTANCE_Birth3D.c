@@ -1,3 +1,7 @@
+// ===================================================
+// Should be score 0, needs types analysis/replacement
+// ===================================================
+
 typedef unsigned int undefined4;
 
 extern char *D_8008D2AC;

@@ -1,3 +1,7 @@
+// ===================================================
+// Should be score 0, needs types analysis/replacement
+// ===================================================
+
 extern int func_8001D094(int modelID);
 
 void func_80030ED4(int param_1, int param_2)

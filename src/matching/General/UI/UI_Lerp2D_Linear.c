@@ -1,3 +1,6 @@
+// ===================================================
+// Should be score 0, needs types analysis/replacement
+// ===================================================
 
 void func_8004ECD4(short *param_1, short param_2, short param_3, short param_4, short param_5, int param_6, short param_7)
 {
