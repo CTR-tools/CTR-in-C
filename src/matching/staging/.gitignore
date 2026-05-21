@@ -1,0 +1,16 @@
+# ── Matching staging area ───────────────────────────────────────────────────
+# NOTHING in this directory is committed. It is the scratch space for the
+# matching workflow and holds:
+#   • SCUS-94426.s and any extracted target .s  → copyrighted game code; must
+#     never be redistributed (i.e. never committed)
+#   • per-function permuter work dirs and their junky output-*/ directories
+#
+# Workflow: do all permuter work in src/matching/staging/<FuncName>/, then move
+# ONLY the cleaned, finished C file out to the tracked location
+#   src/matching/General/<Subdir>/<Name>.c
+#
+# Only this file and README.md are tracked, purely so the directory exists in
+# the repo. Everything else is ignored.
+*
+!.gitignore
+!README.md

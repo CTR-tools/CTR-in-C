@@ -58,3 +58,14 @@ games/settings.json
 mods/MyMods/*
 
 log.txt
+
+# Matching project — user-placed toolchain & data (see src/matching/README.md)
+src/matching/tools/gcc/
+
+# Copyright guard: raw disassembly under matching is copyrighted game code —
+# committing it would be redistribution. The target asm (SCUS-94426.s) and any
+# extracted .s belong in src/matching/staging/, which is itself gitignored
+# wholesale (see src/matching/staging/.gitignore). This is the belt-and-braces
+# rule that also catches a .s placed anywhere else under matching.
+src/matching/**/*.s
+src/matching/**/*.S
