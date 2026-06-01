@@ -1,0 +1,34 @@
+#!/bin/sh
+# Pre-commit guard for the CTR matching subproject.
+#
+# Blocks two classes of files from ever being committed:
+#   1. Raw disassembly under src/matching/ (*.s / *.S) — copyrighted game
+#      code; committing it would be redistribution. The target asm normally
+#      lives in src/matching/staging/ (gitignored), but this also catches a
+#      `git add -f` slip anywhere under matching.
+#   2. Anything inside src/matching/staging/ except its own .gitignore and
+#      README.md — that directory is a gitignored scratch area (permuter junk
+#      plus the copyrighted .s).
+#
+# Enable once per clone:   git config core.hooksPath .githooks
+# Bypassable with `git commit --no-verify` (don't, unless you are certain).
+
+bad=$(git diff --cached --name-only --diff-filter=ACMR | while IFS= read -r f; do
+    case "$f" in
+        src/matching/staging/.gitignore|src/matching/staging/README.md) : ;;
+        src/matching/staging/*)                 echo "$f" ;;
+        src/matching/*.s|src/matching/*.S)      echo "$f" ;;
+    esac
+done)
+
+if [ -n "$bad" ]; then
+    echo "pre-commit: refusing to commit matching scratch / disassembly files:" >&2
+    echo "$bad" | sed 's/^/  - /' >&2
+    echo "" >&2
+    echo "  * .s/.S under src/matching/ is copyrighted disassembly — never commit it." >&2
+    echo "  * src/matching/staging/ is a gitignored scratch area." >&2
+    echo "  Move finished, cleaned C out to src/matching/General/<Subdir>/<Name>.c." >&2
+    echo "  (Override with 'git commit --no-verify' only if you are certain.)" >&2
+    exit 1
+fi
+exit 0
