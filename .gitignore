@@ -42,6 +42,8 @@ tools/updater/.version
 # Third party stuff
 tools/gcc-psyq-converted/include/*
 tools/gcc-psyq-converted/lib/*
+# IWYU (include-what-you-use) PSYQ SDK headers — sufficient as a decompilation reference (see CLAUDE.md)
+reference/psyq-include/
 !/tools/gcc-psyq-converted/lib/.gitignore
 !/tools/gcc-psyq-converted/include/.gitignore
 
