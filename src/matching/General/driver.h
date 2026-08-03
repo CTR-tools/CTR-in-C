@@ -2,9 +2,9 @@
 #define DRIVER_H
 /* Self-contained 926 (NTSC-U / UsaRetail) game structs for decomp-permuter matching.
  * struct BotData + struct Driver below are the project decomp's (src/decompile), unchanged;
- * this prologue supplies the build selector, primitive typedefs, math unions, MATRIX, the
- * embedded-by-value struct Item, forward-decls for pointer-only types, and a struct GameTracker
- * (drivers/race-order/podium fields real-named; rest padded — grow as functions need it). */
+ * this prologue supplies the primitive typedefs, math structs, MATRIX, the embedded-by-value
+ * struct Item, and forward-decls for pointer-only types. (struct GameTracker lives in the
+ * separate gametracker.h, which includes this header.) */
 
 
 typedef unsigned char  u8;
@@ -1322,20 +1322,6 @@ struct Driver
 
 	// 0x668 - size of pool object, minus object pool pointers
 	// 0x670 - size of pool object
-};
-/* struct GameTracker — 0x2584 (926). Real-named for the fields matching code touches;
- * padded elsewhere. Extend by replacing padding with real fields as needed. */
-struct GameTracker
-{
-    char _pad_0000[0x24EC];
-    struct Driver *drivers[8];             /* 0x24EC */
-    struct Driver *driversInRaceOrder[8];  /* 0x250C */
-    char _pad_252C[0x2575 - 0x252C];
-    unsigned char podium_modelIndex_First; /* 0x2575 */
-    unsigned char podium_modelIndex_Second;/* 0x2576 */
-    unsigned char podium_modelIndex_Third; /* 0x2577 */
-    unsigned char podium_modelIndex_tawna; /* 0x2578 */
-    char _pad_2579[0x2584 - 0x2579];
 };
 
 

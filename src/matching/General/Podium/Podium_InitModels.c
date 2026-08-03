@@ -9,7 +9,7 @@
  *
  * Phase B (saphi game/Podium/Podium_0_InitModels.c): CLEAN
  */
-#include "driver.h"
+#include "../gametracker.h"
 
 extern short D_80086E84[];   /* g_awCharacterIDs */
 
