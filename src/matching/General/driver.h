@@ -22,6 +22,7 @@ typedef struct SVec4 { s16 x, y, z, w; } SVec4;
 typedef struct Vec2  { s32 x, y; } Vec2;
 typedef struct Vec3  { s32 x, y, z; } Vec3;
 typedef struct MATRIX { short m[3][3]; long t[3]; } MATRIX;
+typedef struct SVECTOR { short vx, vy, vz, pad; } SVECTOR;
 
 struct GhostTape; struct Icon; struct Instance; struct MaskHeadWeapon;
 struct NavFrame;  struct QuadBlock; struct Terrain; struct Thread;
@@ -220,7 +221,7 @@ struct Driver
 	// 0x2C
 	unsigned int instFlagsBackup;
 	// 0x30
-	char numWumpas;
+	signed char numWumpas;
 	// 0x31
 	char numCrystals;
 	// 0x32
